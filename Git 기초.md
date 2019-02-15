@@ -44,6 +44,7 @@ Commit의 목적은 이후에 다른 개발자가 봤을 때 어떤 코드를 �
 > 03-F. "master" -> local repo의 master branch <br/>
 > 03-G. "origin/HEAD" -> 기본적으로 HEAD는 가장 최신 commit(즉, 가장 최신 버전)를 가리킴. <br/>
 >> (추정) origin/HEAD는 origin의 가장 최신 commit을 가리키며 clone했을 때 얻을 버전을 가리킨다. <br/>
+
 > 03-H. "origin/development" -> remote repo의 development branch <br/>
 > 03-I. "development" -> local repo의 development branch <br/>
 
@@ -57,5 +58,6 @@ contact : email.support@github.com" <br/>
 "=======" <br/>
 "please contact us at support@github.com" <br/>
 ">>>>>>> iss53:index.html" <br/> <br/>
-> master branch, iss53 branch에서 같은 이름의 index.html 파일의 같은 줄을 다르게 작성했다. git은 자동 merge하지 않고 일시중단하여 사용자의 수동 작업을 요구한다. <br/>
+>>> master branch, iss53 branch에서 같은 이름의 index.html 파일의 같은 줄을 다르게 작성했다. git은 자동 merge하지 않고 일시중단하여 사용자의 수동 작업을 요구한다. <br/>
+
 > SourceTree에서 branch만 만들면 graph에 나타나지 않는다. 그 이유는 branch를 만들어도 그 이전 branch(들)에 실제로 달라진 것은 없기 때문이다. 기존 branch에서 새롭게 commit을 해야지 graph선이 분리된다.
