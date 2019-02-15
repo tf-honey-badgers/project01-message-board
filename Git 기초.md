@@ -3,11 +3,11 @@
 ## 처음 설정하기
 프로그램 설치 : SourceTree 다운로드 > BitBucket 회원가입 (실제 사용하지는 않는다) <br/>
 local repo 만들기 : Clone > https://github.com/tf-honey-badgers/project01-message-board.git > local repo 저장 위치 지정 > "Clone" 클릭 <br/>
-develop branch 가져오기 : SourceTree 중앙 창에서 "origin/development" 태그가 있는 줄을 더블클릭 > checkout new branch에서 이름을 "development"로 작성 > "OK" 클릭 <br/>
-> remote repo의 development branch를 나의 local repo로 가져온다. <br/>
+develop branch 가져오기 : SourceTree 중앙 창에서 "origin/develop" 태그가 있는 줄을 더블클릭 > checkout new branch에서 이름을 "develop"로 작성 > "OK" 클릭 <br/>
+> remote repo의 develop branch를 나의 local repo로 가져온다. <br/>
 
 개인 branch 만들기 : "Branch" 클릭 > new branch 입력란에 실제 내가 사용할 개인 branch 명 입력 > "Create Branch" 클릭 <br/>
-> 사실 3번째 branch는 개인용이라기보다는 특정 주제나 기능을 구현할 때 사용하고, 작업 완료 후에는 development branch로 merge한다. <br/>
+> 사실 3번째 branch는 개인용이라기보다는 특정 주제나 기능을 구현할 때 사용하고, 작업 완료 후에는 develop branch로 merge한다. <br/>
 >> remote repo에 branch 만들기 : local branch 만들고 remote repo에 push하면 remote repo에서도 만들어진다.
 
 ## GitHub에 코드 올리기
@@ -32,12 +32,24 @@ Spring에서 관심사의 분리 원칙이 있듯이, Commit도 비슷하게 관
 Commit의 목적은 이후에 다른 개발자가 봤을 때 어떤 코드를 무엇을, 어떻게, 왜 그렇게 작성/수정했는지 알 수 있게 기록을 남기고, 필요할 때 특정 버전의 코드를 찾아서 사용할 수 있게 하는 것.
 > ex) 아침에 commit 후 코드 작업을 했는데 문제가 생겼다. 문제 원인도 해결도 불가능하다. 그러면 제대로 작동하던 아침 commit을 찾아내서 그 버전의 코드로 돌아간다.
 
+## Pull
+Pull은 fetch & merge을 동시수행하는 것 -> fetch (가져오고) & merge (내 것에 합친다)
+Develop branch에 올리는 코드는 항상 테스트 완료한 코드일 것 -> 그래야 pull할 때 문제 없을 것을 알 수가 있다
+
+## Revert <> Rebase <> Reset
+다른 branch에서 과거 commit을 가져와 한 branch를 덮어쓴다면.....
+&nbsp;&nbsp;&nbsp;&nbsp; Revert는 기록이 남는다 (여기서 옛날 버전으로 바꿨다고)
+&nbsp;&nbsp;&nbsp;&nbsp; Rebase는 기록을 없앤다 (완전히 덮어쓰면서 기존 데이터를 잃는다)
+> Rebase로 commit을 덮어 씌울 경우는 개인정보 등 노출해서는 안되는 정보를 공개된 repo에 올렸을 경우
+
+&nbsp;&nbsp;&nbsp;&nbsp; Reset는 기록은 없어지지만 코드는 다시 commit할 수 있게 남는다
+
 ## 용어 정리
 01. remote repository -> GitHub 본사 서버, 실제로 github.com에 접속하면 볼 수 있는 코드, 팀원이 볼려면 여기서 pull한다.
 02. local repository -> 본인 컴퓨터에 위치, 본인만 볼 수 있다.
 03. SourceTree 용어
 > 03-A. "master" branch -> default branch, 즉시 배포 가능한 완전한 코드만 올림, 사용하지 말 것. <br/>
-> 03-B. "development" branch -> 실제로 개발할 때 사용할 branch, 팀의 코드를 합치는 곳. <br/>
+> 03-B. "develop" branch -> 실제로 개발할 때 사용할 branch, 팀의 코드를 합치는 곳. <br/>
 > 03-C. 개인 branch -> 각 팀원이 사용할 개인 branch, 대부분의 코드는 여기로만 올릴 것. <br/>
 > 03-D. "origin" -> remote repo <br/>
 > 03-E. "origin/master" -> remote repo에 있는 master branch (즉, root branch) <br/>
@@ -45,8 +57,8 @@ Commit의 목적은 이후에 다른 개발자가 봤을 때 어떤 코드를 �
 > 03-G. "origin/HEAD" -> 기본적으로 HEAD는 가장 최신 commit(즉, 가장 최신 버전)를 가리킴. <br/>
 >> (추정) origin/HEAD는 origin의 가장 최신 commit을 가리키며 clone했을 때 얻을 버전을 가리킨다. <br/>
 
-> 03-H. "origin/development" -> remote repo의 development branch <br/>
-> 03-I. "development" -> local repo의 development branch <br/>
+> 03-H. "origin/develop" -> remote repo의 develop branch <br/>
+> 03-I. "develop" -> local repo의 develop branch <br/>
 
 ## 기타
 > Branch간 이동하면 해당 branch에 있어야할 파일 등이 자동으로 바뀐다. 파일탐색기에서도 바뀌는 것을 볼 수가 있다. 최근 branch를 변경했다면 지금이 어느 branch인지 SourceTree에서 확인하고 작업할 것! <br/>
