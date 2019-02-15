@@ -1,4 +1,5 @@
-# 여기는 DEVELOP branch입니다. <b/> THIS IS THE DEVELOP BRANCH.
+# 여기는 develop branch입니다.
+# THIS IS THE DEVELOP BRANCH.
 
 ## project01-message-board
 ##### A repository for TF Honey Badgers' first project, creating a message board.
