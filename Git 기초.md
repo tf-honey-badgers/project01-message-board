@@ -37,9 +37,9 @@ Pull은 fetch & merge을 동시수행하는 것 -> fetch (가져오고) & merge 
 Develop branch에 올리는 코드는 항상 테스트 완료한 코드일 것 -> 그래야 pull할 때 문제 없을 것을 알 수가 있다
 
 ## Revert <> Rebase <> Reset
-다른 branch에서 과거 commit을 가져와 한 branch를 덮어쓴다면.....
-&nbsp;&nbsp;&nbsp;&nbsp; Revert는 기록이 남는다 (여기서 옛날 버전으로 바꿨다고)
-&nbsp;&nbsp;&nbsp;&nbsp; Rebase는 기록을 없앤다 (완전히 덮어쓰면서 기존 데이터를 잃는다)
+다른 branch에서 과거 commit을 가져와 한 branch를 덮어쓴다면..... <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; Revert는 기록이 남는다 (여기서 옛날 버전으로 바꿨다고) <br/>
+&nbsp;&nbsp;&nbsp;&nbsp; Rebase는 기록을 없앤다 (완전히 덮어쓰면서 기존 데이터를 잃는다) <br/>
 > Rebase로 commit을 덮어 씌울 경우는 개인정보 등 노출해서는 안되는 정보를 공개된 repo에 올렸을 경우
 
 &nbsp;&nbsp;&nbsp;&nbsp; Reset는 기록은 없어지지만 코드는 다시 commit할 수 있게 남는다
