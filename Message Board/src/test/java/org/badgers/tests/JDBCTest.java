@@ -1,0 +1,34 @@
+package org.badgers.tests;
+
+import static org.junit.Assert.fail;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import org.junit.Test;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class JDBCTest {
+	
+	static {
+		try {
+			Class.forName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testConnection() {
+		try (
+			Connection con = DriverManager.getConnection(
+					"jdbc:mysql://mysql.cncdtmz2goi0.ap-northeast-2.rds.amazonaws.com/open?useSSL=false","bit","bit"
+				)) {
+			log.info(con);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}		
+	}
+}
