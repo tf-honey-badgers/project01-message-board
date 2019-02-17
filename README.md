@@ -1,5 +1,6 @@
-# 여기는 master branch 입니다.
-# THIS IS THE MASTER BRANCH.
+# *** 여기는 master branch 입니다 ***
+# *** THIS IS THE MASTER BRANCH ***
+<br/>
 
 ## project01-message-board
 ###### A repository for TF Honey Badgers' first project, creating a message board.
