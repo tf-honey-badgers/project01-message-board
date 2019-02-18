@@ -5,15 +5,15 @@ import java.util.List;
 import org.badgers.domain.BoardVO;
 import org.badgers.domain.Criteria;
 
-// 이름이 겹치는 것을 방지하기 위해 자기 이름을 붙여서 사용해주세요. (ex) BoardMapperTJ.java)
-public interface BoardMapper {
+public interface BoardMapperYuriel {
+
+	// BoardService regist()와 연결된다.
+	public void insert(BoardVO board);
 	
 	// BoardService listAll()와 연결된다.
 	public List<BoardVO> getList();
 	// BoardService listCriteria()와 연결된다.
 	public List<BoardVO> getListWithPaging(Criteria cri);
-    // BoardService regist()와 연결된다.
-	public void insert(BoardVO board);
 	// BoardService read()와 연결된다.
 	public BoardVO read(Integer bno);
 	// BoardService modify()와 연결된다.
