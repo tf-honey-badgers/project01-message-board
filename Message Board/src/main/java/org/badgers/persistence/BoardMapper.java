@@ -1,4 +1,4 @@
-package org.badgers.persistence;
+﻿package org.badgers.persistence;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public interface BoardMapper {
 	// BoardService listCriteria()와 연결된다.
 	public List<BoardVO> getListWithPaging(Criteria cri);
     // BoardService regist()와 연결된다.
-	public void insert(BoardVO board);
+	public int insert(BoardVO board);
 	// BoardService read()와 연결된다.
 	public BoardVO read(Integer bno);
 	// BoardService modify()와 연결된다.
