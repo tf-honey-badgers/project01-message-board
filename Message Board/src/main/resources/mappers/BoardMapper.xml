@@ -16,4 +16,12 @@
 	<update id="update">
 		update open.tbl_board set title = #{title}, content = #{content} where bno = #{bno}
 	</update>
+	
+	<delete id="delete">
+		delete from open.tbl_board where bno = #{bno}
+	</delete>
+	
+	<select id="getList" resultType="java.util.ArrayList">
+		select * from open.tbl_board order by bno desc
+	</select>
 </mapper>

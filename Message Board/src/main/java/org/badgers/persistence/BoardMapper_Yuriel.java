@@ -13,13 +13,13 @@ public interface BoardMapper_Yuriel {
 	public BoardVO read(Integer bno) throws Exception;
 	// BoardService modify()와 연결된다.
 	public int update(BoardVO board) throws Exception;
-	
+	// BoardService delete()와 연결된다.
+	public int delete(Integer bno) throws Exception;
 	// BoardService listAll()와 연결된다.
 	public List<BoardVO> getList() throws Exception;
+	
 	// BoardService listCriteria()와 연결된다.
 	public List<BoardVO> getListWithPaging(Criteria cri) throws Exception;
-    // BoardService delete()와 연결된다.
-	public int delete(Integer bno) throws Exception;
 	// BoardService listCount()와 연결된다.
 	public int getTotalCount(Criteria cri) throws Exception;
 }

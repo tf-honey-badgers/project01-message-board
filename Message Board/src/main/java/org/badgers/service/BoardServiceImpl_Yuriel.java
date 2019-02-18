@@ -34,12 +34,12 @@ public class BoardServiceImpl_Yuriel implements BoardService {
 	
 	// 특정 게시글을 삭제한다.
 	public int remove(Integer bno) throws Exception {
-		return 1;
+		return mapper.delete(bno);
 	}
 	
 	// 게시글 모두를 읽어온다.
 	public List<BoardVO> listAll() throws Exception {
-		return new ArrayList<BoardVO>();
+		return mapper.getList();
 	}
 	
 	// 게시글을 Criteria로 정하는 수만큼 읽어온다.
