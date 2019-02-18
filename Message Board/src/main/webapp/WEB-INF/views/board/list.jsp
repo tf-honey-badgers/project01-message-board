@@ -50,6 +50,24 @@
         		</c:forEach>
         	</tbody>
     	</table>
+    	
+    	<ul class="paging">
+    		<c:if test="${paging.prev}">
+	    		<li>
+	    			<a href="/board/list${paging.makeUri(paging.firstPage - 1)}">&laquo;</a>
+	    		</li>    		
+    		</c:if>
+    		<c:forEach var="idx" begin="${paging.firstPage}" end="${paging.lastPage}">
+    			<li>
+    				<a href="${paging.makeUri(idx)}">${idx}</a>
+    			</li>
+    		</c:forEach>
+    		<c:if test="${paging.next}">
+	    		<li>
+	    			<a href="/board/list${paging.makeUri(paging.lastPage + 1)}">&raquo;</a>
+	    		</li>    		
+    		</c:if>
+    	</ul>
 	</div>
 	
 	<script type="text/javascript">

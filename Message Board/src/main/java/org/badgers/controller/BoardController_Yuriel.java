@@ -3,8 +3,8 @@ package org.badgers.controller;
 import java.util.List;
 
 import org.badgers.domain.BoardVO;
-import org.badgers.domain.Criteria;
 import org.badgers.domain.CriteriaImpl_Yuriel;
+import org.badgers.domain.PagingDTO_Yuriel;
 import org.badgers.service.BoardServiceImpl_Yuriel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,17 +28,22 @@ public class BoardController_Yuriel {
 	private BoardServiceImpl_Yuriel service;
 	
 	@GetMapping("/list")
-	public void list(Model model) {
+	public void list(CriteriaImpl_Yuriel cri, Model model) {
 		log.info("listGET....................");
 		List<BoardVO> list = null;
-		Criteria cri = new CriteriaImpl_Yuriel();
 		
 		try {
 			list = service.listCriteria(cri);
+			model.addAttribute("list", list);
+			
+			PagingDTO_Yuriel paging = new PagingDTO_Yuriel();
+			paging.setCri(cri);
+			paging.setTotalCount(service.listCount(cri));
+			model.addAttribute("paging", paging);
 		} catch (Exception e) {
 			e.printStackTrace();
+			model.addAttribute("message", "죄송합니다. 문제가 발생했는데 나중에 다시 접속해주세요.");
 		}
-		model.addAttribute("list", list);	
 	}
 	
 	@GetMapping("/register")
