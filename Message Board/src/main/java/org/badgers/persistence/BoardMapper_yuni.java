@@ -13,7 +13,7 @@ public interface BoardMapper_yuni {
 	// BoardService listCriteria()와 연결된다.
 	public List<BoardVO> getListWithPaging(Criteria cri);
     // BoardService regist()와 연결된다.
-	public void regist(BoardVO board);
+	public int regist(BoardVO board);
 	// BoardService read()와 연결된다.
 	public BoardVO read(Integer bno);
 	// BoardService modify()와 연결된다.

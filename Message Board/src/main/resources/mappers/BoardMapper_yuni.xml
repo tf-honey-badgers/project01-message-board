@@ -13,7 +13,7 @@
 		insert into tbl_board (title, content, writer) values(#{title}, #{content} ,#{writer})
 	</insert>
 	
-	<select id="read">
+	<select id="read" resultType="org.badgers.domain.BoardVO">
 		select * from tbl_board where bno = #{bno}
 	</select>
 	

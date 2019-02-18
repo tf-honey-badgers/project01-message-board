@@ -8,13 +8,13 @@ import org.badgers.domain.Criteria;
 public interface BoardService {
 
 	// 게시글을 새로 추가한다.
-	public void regist(BoardVO board) throws Exception;
+	public int regist(BoardVO board) throws Exception;
 	// 특정 게시글을 읽어온다.
 	public BoardVO read(Integer bno) throws Exception;
 	// 특정 게시글을 수정한다.
-	public void modify(BoardVO board) throws Exception;
+	public int modify(BoardVO board) throws Exception;
 	// 특정 게시글을 삭제한다.
-	public void remove(Integer bno) throws Exception;
+	public int remove(Integer bno) throws Exception;
 	// 게시글 모두를 읽어온다.
 	public List<BoardVO> listAll() throws Exception;
 	// 게시글을 Criteria로 정하는 수만큼 읽어온다.

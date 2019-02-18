@@ -16,38 +16,36 @@ public class BoardServiceImpl_yuni  implements BoardService{
 	private BoardMapper_yuni mapper;
 
 	@Override
-	public void regist(BoardVO board) throws Exception {
-		// TODO Auto-generated method stub
+	public int regist(BoardVO board) throws Exception {
+		return mapper.regist(board);
 		
 	}
 
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.read(bno);
 	}
 
 	@Override
-	public void modify(BoardVO board) throws Exception {
-		// TODO Auto-generated method stub
+	public int modify(BoardVO board) throws Exception {
+		return mapper.update(board);
 		
 	}
 
 	@Override
-	public void remove(Integer bno) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public int remove(Integer bno) throws Exception {
+		return mapper.delete(bno);
 	}
 
 	@Override
 	public List<BoardVO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return mapper.getList();
 	}
 
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
