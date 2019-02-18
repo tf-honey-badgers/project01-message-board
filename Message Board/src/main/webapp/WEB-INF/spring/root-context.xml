@@ -41,4 +41,6 @@
 	<mybatis-spring:scan base-package="org.badgers.persistence" />
 	
 	<context:component-scan base-package="org.badgers.controller" />
+	<!-- To delete when pushing -->
+	<context:component-scan base-package="org.badgers" />
 </beans>
