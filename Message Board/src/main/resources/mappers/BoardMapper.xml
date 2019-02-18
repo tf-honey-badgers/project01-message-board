@@ -21,7 +21,7 @@
 		delete from open.tbl_board where bno = #{bno}
 	</delete>
 	
-	<select id="getList" resultType="java.util.ArrayList">
-		select * from open.tbl_board order by bno desc
+	<select id="getList" resultType="org.badgers.domain.BoardVO">
+		select * from open.tbl_board where bno > 0 order by bno desc
 	</select>
 </mapper>
