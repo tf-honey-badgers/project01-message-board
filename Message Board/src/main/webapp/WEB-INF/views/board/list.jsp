@@ -25,7 +25,59 @@
 	
 	<h1>List of messages : Find yours~! ((whisper) ...if you think you can)</h1>
 	
-	${list};
+	<div class="list" style="width: 80%; margin: 0px auto;">
+		<table>
+			<thead>
+        		<tr>
+        			<td>번호</td>
+                    <td>제목</td>
+                    <td>작성자</td>
+                    <td>등록 일시</td>
+                    <td>관리</td>
+				</tr>
+            </thead>
+        	<tbody class="tableBody">
+        		<c:forEach var="item" items="${list}">
+	        		<tr>
+    	    			<td class="ident">${item.bno}</td>
+        				<td class="iTitle">${item.title}</td>
+         				<td class="iWriter">${item.writer}</td>
+         				<td class="iRegDate">${item.regdate}</td>
+    	    			<td>
+        					<a href="#" class="modify" id="modBtn">수정</a>&nbsp;<a href="#" class="delete" id="delBtn">삭제</a>
+        				</td>
+        			</tr>
+        		</c:forEach>
+        	</tbody>
+    	</table>
+	</div>
 	
+	<script type="text/javascript">
+		$('.iTitle').on('click', function() {
+			location.href = "http://localhost/board/get?bno=" + $(this).siblings(".ident").text();
+		});
+		
+		$('.modify').on('click', function() {
+			location.href = "http://localhost/board/modify?bno=" + $(this).parent().siblings(".ident").text();
+		});
+		
+		$('.delete').on('click', function() {
+            if(confirm('삭제하시겠습니까?')) {
+            	$.ajax({
+            		url : '/board/remove',
+            		type : 'POST',
+            		data : {bno : $(this).parent().siblings('.ident').text()},
+            		error : function() {
+            			alert("삭제하는데 에러가 발생했습니다.");
+            		},
+            		success : function(data) {
+            			alert("성공적으로 삭제했습니다.");
+            			console.log("data : " + data);
+            			$(window).empty().append(data);
+            		}
+            	});
+            }
+		});
+	</script>
 </body>
 </html>

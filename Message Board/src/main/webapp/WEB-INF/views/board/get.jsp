@@ -23,16 +23,34 @@
     	</script>
 	</c:if>
 	
-	<h1>Register a new message</h1>
-	
-	<form method="post">
-		<label for="title">TITLE : </label>
-		<input type="text" name="title" id="title" required> <br><hr>
-		<label for="content">CONTENT : </label>
-		<input type="text" name="content" id="content" required> <br><hr>
-		<label for="writer">WRITER : </label>
-		<input type="text" name="writer" id="writer" required> <br>
-		<input type="submit">
-	</form>
+	<div class="list" style="width: 80%; margin: 0px auto;">
+		<table>
+			<thead>
+				<tr><td colspan="2"><h3>The No. ${read.bno} Message</h3></td></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>번호</td>
+					<td>${read.bno}</td>
+				</tr>
+				<tr>
+					<td>제목</td>
+					<td>${read.title}</td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td>${read.content}</td>
+				</tr>
+				<tr>
+					<td>작성자</td>
+					<td>${read.writer}</td>
+				</tr>
+				<tr>
+					<td>작성 일시</td>
+					<td>${read.regdate}</td>
+				</tr>
+			</tbody>
+    	</table>
+	</div>
 </body>
 </html>

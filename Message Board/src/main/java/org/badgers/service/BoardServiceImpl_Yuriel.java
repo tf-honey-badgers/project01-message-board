@@ -1,6 +1,5 @@
 package org.badgers.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.badgers.domain.BoardVO;
@@ -44,11 +43,11 @@ public class BoardServiceImpl_Yuriel implements BoardService {
 	
 	// 게시글을 Criteria로 정하는 수만큼 읽어온다.
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-		return new ArrayList<BoardVO>();
+		return mapper.getListWithPaging(cri);
 	}
 	
 	// 게시글의 총 개수를 센다. (count)
 	public int listCount(Criteria cri) throws Exception {
-		return 1;
+		return mapper.getTotalCount(cri);
 	}
 }
