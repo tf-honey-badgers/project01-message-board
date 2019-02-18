@@ -14,24 +14,11 @@
 <body>
 		<h1>안녕하세요 여기는 TJ Board 입니다</h1>
 	    <h1>공포영화, 떡볶이, 마라탕에 대한 내용만 올려주세요</h1>
-	    ${list}
-	    <table>
-	       <thead>
-	         <th>bno</th>
-	         <th>title</th>
-	         <th>writer</th>
-	         <th>regdate</th>
-	       </thead>
-	       <tbody>
-	        <tr>
-	            <td>01</td>
-	            <td>마라탕</td>
-	            <td>tj</td>
-	            <td>2019-01-01</td>
-	        </tr>
-	       </tbody>
-	    </table>
-	    
-	    <a href="./register">register</a>
+	    <form action="/board/tj/register" method="post">
+		        제목<input type="text" name="title">
+		        타이틀<input type="text" name="content">
+		        작성자<input type="text" name="writer">
+		        <input type="submit">
+    	</form>
 </body>
 </html>
