@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:context="http://www.springframework.org/schema/context"
@@ -26,7 +26,7 @@
    
    <!-- SqlSessionFactory & SqlSession for MyBatis -->
       <!-- Mybatis에서 SQLSession가 생성주기를 관리한다. 
-         : 스프링에 SqlSessionFactory 를 등록하는 작업은 SqlSessionFactoyBen을 이용한다
+         : 스프링에 SqlSessionFactory 를 등록하는 작업은 SqlSessionFactoyBean을 이용한다
          : package 명을 보면 MyBatis 패키지가 아니라 스프링과 연동작업을 처리하는 mybatis-spring 라이브러리의 클래스임을 알 수 있음
        -->
    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
