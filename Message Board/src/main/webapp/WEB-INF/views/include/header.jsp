@@ -14,7 +14,7 @@
                     <!-- 예시 -->
                     <li><a href="/board/listYuni">게시판 (Yuni)</a></li>
                     <li><a href="#">게시판 (Joon)</a></li>
-                    <li><a href="/board/tj/list">게시판 (TJ)</a></li>
+                    <li><a href="/board/tj/list?page=1&perPageNum=10">게시판 (TJ)</a></li>
                     <li><a href="#">게시판 (Yuriel)</a></li>
                     <li><a href="#">게시판 (Hyun)</a></li>
             	</ul>

@@ -12,4 +12,24 @@
 	<insert id="insert" parameterType="org.badgers.domain.BoardVO">
 		insert into tbl_board (title, content, writer, regdate) values (#{title},#{content},#{writer},sysdate())
 	</insert>
+	
+	<select id="getListWithPaging" 
+		parameterType="org.badgers.domain.CriteriaTJ"
+		resultType="org.badgers.domain.BoardVO">
+			select * from (select * from tbl_board limit #{pageStart},#{perPageNum}) as k  order by k.bno desc
+
+	</select>
+	
+	<select id="read" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board where bno = #{bno}
+	</select>
+	
+	<update id="update">
+		update tbl_board SET title =#{title}, writer=#{writer}, content=#{content} where bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+	
 </mapper>
