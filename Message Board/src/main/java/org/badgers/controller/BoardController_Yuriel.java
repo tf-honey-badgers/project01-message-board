@@ -27,7 +27,7 @@ public class BoardController_Yuriel {
 	@Setter(onMethod_ = { @Autowired } )
 	private BoardServiceImpl_Yuriel service;
 	
-	@GetMapping("/list")
+	@GetMapping("/listYuriel")
 	public void list(CriteriaImpl_Yuriel cri, Model model) {
 		log.info("listGET....................");
 		List<BoardVO> list = null;
@@ -46,11 +46,11 @@ public class BoardController_Yuriel {
 		}
 	}
 	
-	@GetMapping("/register")
+	@GetMapping("/registerYuriel")
 	public void register() {
 		log.info("registerGET...................");
 	}
-	@PostMapping("/register")
+	@PostMapping("/registerYuriel")
 	public String register(BoardVO board, RedirectAttributes rttr) {
 		log.info("registerPOST...................");
 		int result = 0;
@@ -70,10 +70,10 @@ public class BoardController_Yuriel {
 		
 		rttr.addFlashAttribute("message", message);
 		
-		return "redirect:/board/list";
+		return "redirect:/board/listYuriel";
 	}
 	
-	@GetMapping( {"/get", "/modify" } )
+	@GetMapping( {"/getYuriel", "/modifyYuriel" } )
 	public void get(
 				@RequestParam("bno") Integer bno, 
 				@ModelAttribute("cri") CriteriaImpl_Yuriel cri, 
@@ -90,7 +90,7 @@ public class BoardController_Yuriel {
 		model.addAttribute("read", readVo);
 	}
 	
-	@PostMapping("/modify")
+	@PostMapping("/modifyYuriel")
 	public String modify (
 				BoardVO board, 
 				@ModelAttribute("cri") CriteriaImpl_Yuriel cri, 
@@ -111,10 +111,10 @@ public class BoardController_Yuriel {
 
 		rttr.addFlashAttribute("list", list);	
 		
-		return "redirect:/board/list";
+		return "redirect:/board/listYuriel";
 	}
 	
-	@PostMapping("/remove")
+	@PostMapping("/removeYuriel")
 	public String remove(
 				@RequestParam("bno") Integer bno,
 				@ModelAttribute("cri") CriteriaImpl_Yuriel cri,
@@ -135,6 +135,6 @@ public class BoardController_Yuriel {
 		
 		rttr.addFlashAttribute("list", list);
 		
-		return "redirect:/board/list";
+		return "redirect:/board/listYuriel";
 	}
 }

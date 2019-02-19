@@ -51,6 +51,30 @@
 				</tr>
 			</tbody>
     	</table>
+    	
+    	<a href="http://localhost/board/modifyYuriel?bno=${read.bno}" class="modify" id="modBtn">수정</a>
+    	<a href="#" class="delete" id="delBtn">삭제</a>
+    	
+    	<script type="text/javascript">
+    		var msgNum = ${read.bno};
+    		
+    		$("#delBtn").on("click", function() {
+    			if(confirm("정말로 삭제하시겠습니까?")) {
+    				$.ajax({
+                		url : '/board/removeYuriel',
+                		type : 'POST',
+                		data : {bno : msgNum},
+                		error : function() {
+                			alert("삭제하는데 에러가 발생했습니다.");
+                		},
+                		success : function(data) {
+                			alert("성공적으로 삭제했습니다.");
+                			location.href = "http://localhost/board/listYuriel";
+                		}
+    				});
+    			};
+    		});
+    	</script>
 	</div>
 </body>
 </html>

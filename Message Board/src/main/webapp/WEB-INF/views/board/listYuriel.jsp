@@ -33,7 +33,6 @@
                     <td>제목</td>
                     <td>작성자</td>
                     <td>등록 일시</td>
-                    <td>관리</td>
 				</tr>
             </thead>
         	<tbody class="tableBody">
@@ -43,9 +42,6 @@
         				<td class="iTitle">${item.title}</td>
          				<td class="iWriter">${item.writer}</td>
          				<td class="iRegDate">${item.regdate}</td>
-    	    			<td>
-        					<a href="#" class="modify" id="modBtn">수정</a>&nbsp;<a href="#" class="delete" id="delBtn">삭제</a>
-        				</td>
         			</tr>
         		</c:forEach>
         	</tbody>
@@ -54,7 +50,7 @@
     	<ul class="paging">
     		<c:if test="${paging.prev}">
 	    		<li>
-	    			<a href="/board/list${paging.makeUri(paging.firstPage - 1)}">&laquo;</a>
+	    			<a href="/board/listYuriel${paging.makeUri(paging.firstPage - 1)}">&laquo;</a>
 	    		</li>    		
     		</c:if>
     		<c:forEach var="idx" begin="${paging.firstPage}" end="${paging.lastPage}">
@@ -64,37 +60,15 @@
     		</c:forEach>
     		<c:if test="${paging.next}">
 	    		<li>
-	    			<a href="/board/list${paging.makeUri(paging.lastPage + 1)}">&raquo;</a>
+	    			<a href="/board/listYuriel${paging.makeUri(paging.lastPage + 1)}">&raquo;</a>
 	    		</li>    		
     		</c:if>
     	</ul>
 	</div>
 	
 	<script type="text/javascript">
-		$('.iTitle').on('click', function() {
-			location.href = "http://localhost/board/get?bno=" + $(this).siblings(".ident").text();
-		});
-		
-		$('.modify').on('click', function() {
-			location.href = "http://localhost/board/modify?bno=" + $(this).parent().siblings(".ident").text();
-		});
-		
-		$('.delete').on('click', function() {
-            if(confirm('삭제하시겠습니까?')) {
-            	$.ajax({
-            		url : '/board/remove',
-            		type : 'POST',
-            		data : {bno : $(this).parent().siblings('.ident').text()},
-            		error : function() {
-            			alert("삭제하는데 에러가 발생했습니다.");
-            		},
-            		success : function(data) {
-            			alert("성공적으로 삭제했습니다.");
-            			console.log("data : " + data);
-            			$(window).empty().append(data);
-            		}
-            	});
-            }
+		$('.ident').parent().on('click', function() {
+			location.href = "http://localhost/board/getYuriel?bno=" + $(this).children(".ident").text();
 		});
 	</script>
 </body>
