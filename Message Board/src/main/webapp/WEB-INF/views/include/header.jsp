@@ -16,7 +16,7 @@
                     <li><a href="#">게시판 (Joon)</a></li>
                     <li><a href="#">게시판 (TJ)</a></li>
                     <li><a href="#">게시판 (Yuriel)</a></li>
-                    <li><a href="#">게시판 (Hyun)</a></li>
+                    <li><a href="/board/list_hyun">게시판 (Hyun)</a></li>
             	</ul>
         	</div>
     	</div>
