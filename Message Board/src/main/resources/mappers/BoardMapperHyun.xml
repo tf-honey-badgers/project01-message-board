@@ -9,22 +9,37 @@
 	<select id="getList" resultType="org.badgers.domain.BoardVO">
 		SELECT * from tbl_board where bno >0 order by bno desc
 	</select>
-	<!--  등록하기 -->
+	
+	<!-- 등록하기  -->
 	<insert id="regist">
 		insert into tbl_board (title, content, writer) values(#{title}, #{content} ,#{writer})
 	</insert>
+	
            <!-- 보기 -->
 	<select id="read" resultType="org.badgers.domain.BoardVO">
 		select * from tbl_board where bno = #{bno}
 	 </select>
+	 
 	 <!-- 업뎃,수정 -->
 	<update id="update">
 		update tbl_board set title =#{title}, content=#{content} where bno=#{bno}
 	</update>
 	
+	
 	<!-- 삭제 -->
 	<delete id="delete">
 		delete from tbl_board where bno=#{bno}
 	</delete>
+	
+	<!--  페이징 처리  -->
+	<select id="getListWithPaging" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board where bno > 0 order by bno desc, regdate desc limit #{pageStart}, #{perPageNum}
+	</select>
+	
+	
+	<!-- 총양 count -->
+	<select id="getTotalCount" resultType="int">
+		select count(bno) from tbl_board where bno > 0
+	</select>
 	
 </mapper>
