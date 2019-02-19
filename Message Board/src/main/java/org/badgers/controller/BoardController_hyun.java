@@ -25,7 +25,8 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/board/*")
 @Log4j
 public class BoardController_hyun {
-
+	
+	//서비스 찾고 주입
 	@Setter(onMethod_ = { @Autowired })
 	private BoardServiceImpl_hyun service;
 
@@ -34,31 +35,31 @@ public class BoardController_hyun {
 	 * model.addAttribute("list", service.listAll()); return "/board/list_hyun"; }
 	 */
 
-	@GetMapping("/list_hyun") // 게시판 리스트로 이동하기
+	@GetMapping("/list_hyun") // 페이징 처리하고 게시판 리스트로 이동하며 보기
 	public void list(CriteriaImpl_hyun cri, Model model) {
 		 log.info("listGET....................");
 		List<BoardVO> list = null;
 		try {
-			list = service.listCriteria(cri);
-			model.addAttribute("list", list);
+			list = service.listCriteria(cri); //페이징 처리하는걸 가져와
+			model.addAttribute("list", list); // 추가시키고 
 
 			PageDTO_hyun paging = new PageDTO_hyun();
 			paging.setCri(cri);
 			paging.setTotalCount(service.listCount(cri));
-			model.addAttribute("paging", paging);
+			model.addAttribute("paging", paging); 
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("message", "낚 낚 ~~~~~~~~~~~~~~~~~~~~~~~.");
-		}
+		} // 못불러오면 낚낚
 	}
 
 
-	// 이동
+	// get 방식 등록 방식 보는 매핑 
 	@RequestMapping(value = "/register_hyun", method = RequestMethod.GET)
 	public String register() {
 		return "/board/register_hyun";
 	}
-	// 게시글 처리 
+	// 게시글 처리 방식으로 다처리한후 에는 리스트로 돌아온다  
 	@PostMapping("/register_hyun")
 	public String register(BoardVO board, RedirectAttributes rttr) {
 		try {
@@ -69,7 +70,7 @@ public class BoardController_hyun {
 		return "redirect:/board/list_hyun";
 	}
 
-	// 읽어주기
+	// 읽고 -> 고칠수 있게 같이 
 	@GetMapping( {"/get_hyun", "/modify_hyun" } )
 	public void get(
 				@RequestParam("bno") Integer bno, 
