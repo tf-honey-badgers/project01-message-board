@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.badgers.domain.BoardVO;
 import org.badgers.domain.Criteria;
+import org.badgers.domain.Criteria_yuni;
 
 // 이름이 겹치는 것을 방지하기 위해 자기 이름을 붙여서 사용해주세요. (ex) BoardMapperTJ.java)
 public interface BoardMapper_yuni {
@@ -22,4 +23,6 @@ public interface BoardMapper_yuni {
 	public int delete(Integer bno);
 	// BoardService listCount()와 연결된다.
 	public int getTotalCount(Criteria cri);
+	
+	
 }

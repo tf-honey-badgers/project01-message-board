@@ -24,4 +24,12 @@
 	<delete id="delete">
 		delete from tbl_board where bno=#{bno}
 	</delete>
+	<select id="getListWithPaging" resultType="org.badgers.domain.BoardVO">
+		<![CDATA[
+			select * from tbl_board where bno order by bno desc limit #{pageStart}, #{perPageNum}
+		
+		]]>
+	
+	
+	</select>
 </mapper>

@@ -46,7 +46,7 @@ public class BoardServiceImpl_yuni  implements BoardService{
 	@Override
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 		
-		return null;
+		return mapper.getListWithPaging(cri);
 	}
 
 	@Override
