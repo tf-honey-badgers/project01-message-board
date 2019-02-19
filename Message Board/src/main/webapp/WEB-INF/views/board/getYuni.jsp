@@ -51,11 +51,15 @@
                   <input type="text" class="form-control form-control-user" name="writer" value="${board.writer }" readonly="readonly">
                 </div>
          		 <hr>
-                <button class="btn btn-primary btn-user ">
-                 	<a href="/board/modify?bno=${board.bno }" class="text-white">Modify</a> 
+              <!--   <button class="btn btn-primary btn-user " data-oper="modify"> -->
+                 	<a href="/board/modify?bno=${board.bno }" class="btn btn-primary btn-user " >Modify</a> 
+               <!--  </button > -->
+                 <button class="btn btn-primary btn-user " data-oper="list">
+                  <a href="/board/listYuni" class="text-white" >List</a> 
                 </button >
-                 <button class="btn btn-primary btn-user ">
-                  <a href="/board/listYuni" class="text-white">List</a> 
+                
+                 <button class="btn btn-primary btn-user " data-oper="remove">
+                  <a href="/board/remove" class="text-white" >Remove</a> 
                 </button >
                 <hr>
                
@@ -78,6 +82,34 @@
 
   <!-- Custom scripts for all pages-->
   <script src="/resources/js/sb-admin-2.min.js"></script>
+  <script>
+  	$(document).ready(function(){
+  		
+  		var formObj= $('form');
+  		
+  		console.log(formObj);
+  		
+  		$('button').on('click', function(e){
+  			e.preventDefault();
+  			
+  			var operation= $(this).data('oper');
+  			
+  			console.log(operation)
+  			
+  			if(operation==='remove'){
+  				formObj.attr('action', '/board/remove?bno=${board.bno }')
+  			}else if(operation==='list'){
+  				formObj.attr('action', '/board/listYuni')
+  			}
+  			formObj.submit();
+  			
+  		})
+  		
+  	})
+  	
+  
+  
+  </script>
 
 </body>
 

@@ -21,7 +21,7 @@ public class BoardController_yuni {
 	@Inject
 	private BoardService service;
 
-	@GetMapping("listYuni")
+	@RequestMapping("listYuni")
 	public String list(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 		return "/board/listYuni";
@@ -45,6 +45,14 @@ public class BoardController_yuni {
 		service.modify(board);
 		log.info(board.getTitle());
 		return	"redirect:/board/listYuni";
+		
+	}
+	
+	@PostMapping("remove")
+	public String remove (@RequestParam("bno")int bno) throws Exception {
+		service.remove(bno);
+		
+		return "redirect:/board/listYuni";
 		
 	}
 
