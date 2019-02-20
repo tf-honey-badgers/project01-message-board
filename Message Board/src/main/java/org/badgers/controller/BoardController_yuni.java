@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
 
-@RequestMapping("/boardyuni/*")
+@RequestMapping("/board/*")
 @Controller
 @Log4j
 public class BoardController_yuni {
@@ -26,7 +26,7 @@ public class BoardController_yuni {
 	@Inject
 	private BoardServiceImpl_yuni service;
 
-	@RequestMapping("list")
+	@RequestMapping("listYuni")
 	public String list(Model model) throws Exception {
 		model.addAttribute("list", service.listAll());
 		return "/board/listYuni";
