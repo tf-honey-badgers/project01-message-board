@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.badgers.domain.BoardVO;
 import org.badgers.domain.Criteria;
+import org.springframework.stereotype.Service;
 
 public interface BoardService {
 

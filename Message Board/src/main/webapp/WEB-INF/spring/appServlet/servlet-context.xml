@@ -32,4 +32,5 @@
    <!-- Scans all packages under "org.badgers" for beans (@Controller, @Service, @Component, etc.) -->
    <context:component-scan base-package="org.badgers.controller" />
    <context:component-scan base-package="org.badgers.service" />
+
 </beans:beans>

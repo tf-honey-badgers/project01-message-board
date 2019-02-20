@@ -2,6 +2,7 @@
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Select;
 import org.badgers.domain.BoardVO;
 import org.badgers.domain.Criteria;
 
