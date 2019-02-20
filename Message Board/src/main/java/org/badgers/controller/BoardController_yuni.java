@@ -7,6 +7,7 @@ import org.badgers.domain.Criteria;
 import org.badgers.domain.Criteria_yuni;
 import org.badgers.domain.PageMaker_yuni;
 import org.badgers.service.BoardService;
+import org.badgers.service.BoardServiceImpl_yuni;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardController_yuni {
 
 	@Inject
-	private BoardService service;
+	private BoardServiceImpl_yuni service;
 
 	@RequestMapping("listYuni")
 	public String list(Model model) throws Exception {
