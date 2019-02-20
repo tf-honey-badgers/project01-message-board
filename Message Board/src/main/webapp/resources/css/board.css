@@ -11,3 +11,12 @@ hr {border: 2px solid lightgray;}
 .menu>ul {display: block; list-style: none; margin-left: -6px;}
 .menu>ul>li {display: inline-block; margin-right: -6px; padding: 10px 0px;}
 .menu>ul>li>a {text-decoration: none; color: darkslategray; font-size: 20px; padding: 10px 40px;}
+
+table {margin-top: 10px; width: 100%; border-radius: 50px;}
+table, tr, td {border: 2px solid dimgray; border-collapse: collapse; text-align: center;}
+thead {background-color: lightslategray; color: whitesmoke; font-size: 20px;}
+thead>tr>td {padding: 10px 0px;}
+
+.paging {list-style: none;}
+.paging>li {display: inline-block;}
+.paging>li>a {text-decoration: none;}
