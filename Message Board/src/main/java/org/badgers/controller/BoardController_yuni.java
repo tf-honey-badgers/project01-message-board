@@ -6,7 +6,7 @@ import org.badgers.domain.BoardVO;
 import org.badgers.domain.Criteria;
 import org.badgers.domain.Criteria_yuni;
 import org.badgers.domain.PageMaker_yuni;
-import org.badgers.service.BoardService;
+import org.badgers.service.BoardServiceImpl_yuni;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import lombok.Getter;
 import lombok.extern.log4j.Log4j;
 
 @RequestMapping("/board/*")
@@ -23,7 +22,7 @@ import lombok.extern.log4j.Log4j;
 public class BoardController_yuni {
 
 	@Inject
-	private BoardService service;
+	private BoardServiceImpl_yuni service;
 
 	@RequestMapping("listYuni")
 	public String list(Model model) throws Exception {
@@ -52,7 +51,7 @@ public class BoardController_yuni {
 		
 	}
 	
-	@PostMapping("remove")
+	@PostMapping("removeYuni")
 	public String remove (@RequestParam("bno")int bno) throws Exception {
 		service.remove(bno);
 		
