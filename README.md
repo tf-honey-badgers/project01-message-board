@@ -1,5 +1,7 @@
-# ** 여기는 Yuriel branch입니다. **
-# ** THIS IS THE Yuriel BRANCH. **
+
+# 여기는 "yuni" branch입니다.
+
+
 
 ## project01-message-board
 ##### A repository for TF Honey Badgers' first project, creating a message board.
