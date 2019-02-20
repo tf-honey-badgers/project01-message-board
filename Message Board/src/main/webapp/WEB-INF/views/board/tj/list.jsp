@@ -15,7 +15,6 @@
 	    </style>
 </head>
 <body>
-	<jsp:include page="../../include/header.jsp" flush="false"></jsp:include>
 		<h1>안녕하세요 여기는 TJ Board 입니다</h1>
 	    <h1>공포영화, 떡볶이, 마라탕에 대한 내용만 올려주세요</h1>
 	    
