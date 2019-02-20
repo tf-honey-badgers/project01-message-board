@@ -16,9 +16,9 @@ public class PageDTO_hyun {
 
 	private int totalCount; // 총합계
 
-	private boolean prev;
+	private boolean prev; //[이전]으로 이동하는 버튼이 생길 조건이 되는지를 나타내는 boolean 변수
 
-	private boolean next;
+	private boolean next;// [다음]으로 이동하는 버튼이 생길 조건이 되는지를 나타내는 boolean 변수
 
 	private int viewPagingNum = 10; // 페이징 갯수
 

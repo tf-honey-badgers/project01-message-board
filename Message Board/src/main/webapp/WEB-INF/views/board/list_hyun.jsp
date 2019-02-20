@@ -12,7 +12,7 @@ width: 60%;
 height: 300px;
 margin: auto;
 text-align: center;
-border: 1px solid blue;
+border: 10px solid blue;
 
 }
 a {
