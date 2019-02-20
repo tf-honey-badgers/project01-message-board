@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 이름이 겹치는 것을 방지하기 위해 자기 이름을 붙여서 사용해주세요. (ex) BoardMapperYuni.xml) -->
+<mapper namespace="org.badgers.persistence.BoardMapper_hyun">
+		<!--  리스트 뿌려주기  -->
+	<select id="getList" resultType="org.badgers.domain.BoardVO">
+		SELECT * from tbl_board where bno >0 order by bno desc
+	</select>
+	
+	<!-- 등록하기  -->
+	<insert id="regist">
+		insert into tbl_board (title, content, writer) values(#{title}, #{content} ,#{writer})
+	</insert>
+	
+           <!-- 보기 -->
+	<select id="read" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board where bno = #{bno}
+	 </select>
+	 
+	 <!-- 업뎃,수정 -->
+	<update id="update">
+		update tbl_board set title =#{title}, content=#{content} where bno=#{bno}
+	</update>
+	
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		delete from tbl_board where bno=#{bno}
+	</delete>
+	
+	<!--  페이징 처리  -->
+	<select id="getListWithPaging" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board where bno > 0 order by bno desc, regdate desc limit #{pageStart}, #{perPageNum}
+	</select>
+	
+	
+	<!-- 총양 count -->
+	<select id="getTotalCount" resultType="int">
+		select count(bno) from tbl_board where bno > 0
+	</select>
+	
+</mapper>
