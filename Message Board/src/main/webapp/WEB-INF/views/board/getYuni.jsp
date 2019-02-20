@@ -59,7 +59,7 @@
                 </button >
                 
                  <button class="btn btn-primary btn-user " data-oper="remove">
-                  <a href="/board/remove" class="text-white" >Remove</a> 
+                  <a href="/board/removeYuni" class="text-white" >Remove</a> 
                 </button >
                 <hr>
                
