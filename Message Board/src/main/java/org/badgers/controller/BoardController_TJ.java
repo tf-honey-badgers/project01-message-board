@@ -59,7 +59,7 @@ public class BoardController_TJ {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:/board/tj/list";
+		return "redirect:/board/tj/list?page=1&perPageNum=10";
 	}
 	
 	@GetMapping({"/get","/modify"}) //get은 읽기만 한다, modify는 변경하는 폼으로 보내준다.
