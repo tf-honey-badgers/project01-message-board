@@ -25,15 +25,6 @@
       <beans:property name="contentType" value="UTF-8" />
    </beans:bean>
 
-<<<<<<< HEAD
-   <!-- @Transactional 애너테이션 활성화 설정 -->
-      <!-- "tx:annotation-driven" must be together with "context:component-scan" in the servlet-context.xml -->
-   <tx:annotation-driven transaction-manager="transactionManager"/>
-   
-   <!-- Scans all packages under "org.badgers" for beans (@Controller, @Service, @Component, etc.) -->
-   <context:component-scan base-package="org.badgers.controller" />
-   <!-- <context:component-scan base-package="org.badgers.service" /> -->
-=======
 	<!-- @Transactional 애너테이션 활성화 설정 -->
 		<!-- "tx:annotation-driven" must be together with "context:component-scan" in the servlet-context.xml -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
@@ -41,5 +32,4 @@
 	<!-- Scans all packages under "org.badgers" for beans (@Controller, @Service, @Component, etc.) -->
 	<context:component-scan base-package="org.badgers.controller" />
 	<context:component-scan base-package="org.badgers.service" />
->>>>>>> e1083cf2a3bb51816bb9e0c5a30736b723b4888c
 </beans:beans>
