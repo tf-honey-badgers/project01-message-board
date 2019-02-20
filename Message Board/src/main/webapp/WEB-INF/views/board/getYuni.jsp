@@ -97,7 +97,7 @@
   			console.log(operation)
   			
   			if(operation==='remove'){
-  				formObj.attr('action', '/board/remove?bno=${board.bno }')
+  				formObj.attr('action', '/board/removeYuni?bno=${board.bno }')
   			}else if(operation==='list'){
   				formObj.attr('action', '/board/listYuni')
   			}
