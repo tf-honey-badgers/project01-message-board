@@ -44,7 +44,7 @@
             		success : function(data){
             			console.log(data);
             			alert('완료!');
-            			location.href="/board/listJoon";
+            			location.href="/board/listJoon?page=1&perPageNum=10";
 
             		} // success
             	});

@@ -17,11 +17,10 @@
 	<jsp:include page="../include/header.jsp" flush="false"></jsp:include>
 
 	<!-- 속성 중 "message" 속성이 존재할 경우, 페이지 로딩 후 팝업창으로 보여준다. -->
-	
-	bno : #{bno}<br>
-	title : <input type="text" id="title" value="#{title}"><br>
-	content : <input type="text" id="content" value="#{content}"><br>
-	writer : <input type="text" id="writer" value="#{writer}"><br>
+	bno : <input type="text" id="bno" value="${thisBoard.bno}" readonly ><br><br>
+	title : <input type="text" id="title" value="${thisBoard.title}"><br>
+	content : <input type="text" id="content" value="${thisBoard.content}"><br>
+	writer : <input type="text" id="writer" value="${thisBoard.writer}"><br>
 	<input type="button" id="fixbtn" value="수정 완료">
 		<script>
 		$(document).ready(function(){
@@ -30,8 +29,10 @@
 				
 				$.ajax({
             		type : "POST", 
-            		url : "../../board/listJoon/boardinsert",
-            		data : {title : $('#title').val(),
+            		url : "../../board/listJoon/boardupdate",
+            		data : {
+            			bno : $('#bno').val(),
+            			title : $('#title').val(),
             			content : $('#content').val(),
             			writer : $('#writer').val()
             			},
@@ -45,7 +46,7 @@
             		success : function(data){
             			console.log(data);
             			alert('완료!');
-            			location.href="/board/listJoon";
+            			location.href="/board/listJoon?page=1&perPageNum=10";
 
             		} // success
             	});

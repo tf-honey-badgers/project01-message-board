@@ -7,7 +7,7 @@ public class Criteria_Joon implements Criteria{
 	
 	public Criteria_Joon() {
 		this.page = 1;
-		this.perPageNum = 10;
+		this.perPageNum = 20;
 	}
 
 	public int getPageStart() {
@@ -34,8 +34,8 @@ public class Criteria_Joon implements Criteria{
 
 	public void setPerPageNum(int perPageNum) {
 		
-		if(perPageNum <= 0 || perPageNum >= 100) {
-			this.perPageNum = 10;
+		if(perPageNum <= 0 || perPageNum > 100) {
+			this.perPageNum = 20;
 		}else {
 			this.perPageNum = page;
 		}

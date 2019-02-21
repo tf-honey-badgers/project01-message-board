@@ -25,7 +25,7 @@ public class PageMaker_Joon {
 	
 	private void calcDate() {
 		
-		endPage = (int) (Math.ceil(cri.getPage()/(double)displayPageNum)*displayPageNum);
+		endPage = (int)(Math.ceil(cri.getPage() / (double)displayPageNum)*displayPageNum);
 		
 		startPage = (endPage - displayPageNum)+1;
 		
@@ -45,7 +45,7 @@ public class PageMaker_Joon {
 		 
         UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
                 .queryParam("perPageNum", cri.getPerPageNum()).build();
- 
+        
         return uriComponents.toUriString();
     }
 
@@ -64,7 +64,7 @@ public class PageMaker_Joon {
 	}
 
 	public void setStartPage(int startPage) {
-		this.startPage = startPage;
+		this.startPage = (startPage-1)*10;
 	}
 
 	public int getEndPage() {
