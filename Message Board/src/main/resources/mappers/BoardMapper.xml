@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 이름이 겹치는 것을 방지하기 위해 자기 이름을 붙여서 사용해주세요. (ex) BoardMapperYuni.xml) -->
+<mapper namespace="org.badgers.persistence.BoardMapper">
+ 	<select id="getList" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board
+	</select>
+	
+	<insert id="insert" parameterType="org.badgers.domain.BoardVO">
+		insert into tbl_board (title, content, writer, regdate) values (#{title},#{content},#{writer},sysdate())
+	</insert>
+	
+	<select id="getListWithPaging" 
+		parameterType="org.badgers.domain.CriteriaTJ"
+		resultType="org.badgers.domain.BoardVO">
+			select * from (select * from tbl_board limit #{pageStart},#{perPageNum}) as k  order by k.bno desc
+
+	</select>
+	
+	<select id="read" resultType="org.badgers.domain.BoardVO">
+		select * from tbl_board where bno = #{bno}
+	</select>
+	
+	<update id="update">
+		update tbl_board SET title =#{title}, writer=#{writer}, content=#{content} where bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+	
+</mapper>
